@@ -5,8 +5,6 @@ import profiles from './reducers/profiles'
 
 const devTools = window.devToolsExtension ? window.devToolsExtension() : (f) => f
 
-export const history = createHistory()
-
 const middleware = [
   ReduxThunk
 ]
