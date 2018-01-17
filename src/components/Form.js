@@ -1,16 +1,21 @@
 import React from 'react'
+import { Button, Form } from 'semantic-ui-react'
 import styles from './Form.css'
 
-export default function Form(props) {
+const SuiForm = (props) => {
   return (
     <div className="Form">
-      <form>
-        <label for="name">Naam *</label>
-        <input type="text" id="name" name="name" placeholder="Naam" required/>
+      <Form>
+        <Form.Field>
+          <label>Naam</label>
+          <input placeholder='Naam' />
+        </Form.Field>
         <input type="text" name="title" placeholder="Titel" required/>
         <input type="date" name="birthdate" placeholder="Geboortedatum" required/>
-        <button type="submit" value="Submit" />
-      </form>
+        <Button type='submit'>Submit</Button>
+      </Form>
     </div>
   )
 }
+
+export default SuiForm
