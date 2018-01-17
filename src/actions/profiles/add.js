@@ -1,7 +1,21 @@
+import ApiClient from '../../api/client'
 
+export const ADD_PROFILE = 'ADD_PROFILE'
 
-export default () => {
+const api = ApiClient()
+
+export default (profile) => {
   return (dispatch) => {
-    fetch()
+    api.post('/', { ...profile })
+      .then(result => {
+        dispatch({
+          type: ADD_PROFILE,
+          payload: result.body
+        })
+      })
+
+      .catch(error => {
+        console.log(error)
+      })
   }
 }
