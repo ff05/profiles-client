@@ -1,11 +1,18 @@
 .App {
-  display: flex
+  display: flex;
 }
 
 .Main {
-
+  background-color: var(--light-blue);
+  flex-basis: 80%;
+  padding: var(--container-padding);
 }
 
 .Sidebar {
-  
+  flex-basis: 20%;
+  background-color: var(--light-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--container-padding);
 }

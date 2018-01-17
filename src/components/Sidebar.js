@@ -6,6 +6,7 @@ export default function Sidebar(props) {
   return (
     <div className="Sidebar">
       <Title title="Nieuw Profiel" />
+      <Form />
     </div>
   )
 }
