@@ -5,18 +5,18 @@
   --light-green: #C8E6C9;
   --red: #F44336;
   --light-red: #FFCDD2;
-  --body-font: Roboto, Helvetica, Arial, sans-serif;
-  --body-font2: "Open Sans", Helvetica, Arial, sans-serif;
-  --header-font: Lato, Helvetica, Arial, sans-serif;
-  --header-font2: Merriweather, Helvetica, Arial, sans-serif;
+  --main-font-color: #2b2b2b;
+  --main-body-font: Roboto, Helvetica, Arial, sans-serif;
+  --main-header-font: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--body-font);
+  font-family: var(--main-body-font);
+  color: var(--main-font-color)
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--body-font2)
+  font-family: var(--main-header-font)
 }
