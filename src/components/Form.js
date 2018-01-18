@@ -28,7 +28,7 @@ class SuiForm extends PureComponent {
           </Form.Field>
           <Form.Field >
             <label>Geboortedatum</label>
-            <input placeholder='dd-mm-yyyy' name="birthDate" value={this.state.birthDate} onChange={this.handleChange} required />
+            <input placeholder='yyyy-mm-dd' name="birthDate" value={this.state.birthDate} onChange={this.handleChange} required />
           </Form.Field>
           <Form.TextArea label='Bio' name="bio" value={this.state.bio} placeholder='Schrijf iets over jezelf...' onChange={this.handleChange} required />
           <Button onSubmit={this.handleSubmit} type='submit'>Submit</Button>
