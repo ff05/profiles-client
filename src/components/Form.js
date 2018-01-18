@@ -1,33 +1,41 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import { Button, Form } from 'semantic-ui-react'
+import addProfile from '../actions/profiles/add'
 import styles from './Form.css'
 
-export default class SuiForm extends PureComponent {
+class SuiForm extends PureComponent {
+  state = { name: '', title: '', birthDate: '', bio: '' }
 
-  handleSubmit() {
+  handleChange = (e) => this.setState({[e.target.name]: e.target.value})
 
-  }
-  
+  handleSubmit = (e) => {
+    this.props.addProfile(this.state)
+    e.preventDefault()
+  } 
+
   render() {
     return (
       <div className="Form">
-        <Form>
-          <Form.Field required>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Field>
             <label>Naam</label>
-            <input placeholder='Naam' />
+            <input placeholder='Naam' name="name" value={this.state.name} onChange={this.handleChange} required />
           </Form.Field>
-          <Form.Field required>
+          <Form.Field >
             <label>Titel</label>
-            <input placeholder='Titel' />
+            <input placeholder='Titel' name="title" value={this.state.title} onChange={this.handleChange} required />
           </Form.Field>
-          <Form.Field type="date" required>
+          <Form.Field >
             <label>Geboortedatum</label>
-            <input placeholder='dd-mm-yyyy' />
+            <input placeholder='dd-mm-yyyy' name="birthDate" value={this.state.birthDate} onChange={this.handleChange} required />
           </Form.Field>
-          <Form.TextArea label='Bio' placeholder='Schrijf iets over jezelf...' required />
-          <Button type='submit'>Submit</Button>
+          <Form.TextArea label='Bio' name="bio" value={this.state.bio} placeholder='Schrijf iets over jezelf...' onChange={this.handleChange} required />
+          <Button onSubmit={this.handleSubmit} type='submit'>Submit</Button>
         </Form>
       </div>
     )
   }
 }
+
+export default connect(null, {addProfile})(SuiForm)
